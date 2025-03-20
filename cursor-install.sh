@@ -2,15 +2,16 @@
 
 BINDIR=$HOME/bin
 TEMPDIR=/tmp/cursor
-APPIMAGE_URL="https://downloader.cursor.sh/linux/appImage/x64"
+APPIMAGE_URL="https://downloads.cursor.com/production/client/linux/x64/appimage/Cursor-0.47.8-82ef0f61c01d079d1b7e5ab04d88499d5af500e3.deb.glibc2.25-x86_64.AppImage"
 mkdir -p $TEMPDIR $BINDIR $HOME/.icons $HOME/.local/share/applications
 
 pushd $TEMPDIR
 
+# Atsisiųsti naujausią AppImage
 wget -O $TEMPDIR/cursor.AppImage.original $APPIMAGE_URL
 chmod +x $TEMPDIR/cursor.AppImage.original
 
-# Extract the AppImage
+# Išskleisti AppImage
 $TEMPDIR/cursor.AppImage.original --appimage-extract
 cp $TEMPDIR/squashfs-root/cursor.png $HOME/.icons/
 
@@ -29,9 +30,8 @@ X-AppImage-Version=latest
 Comment=Cursor is an AI-first coding environment.
 MimeType=x-scheme-handler/cursor;
 
-
 [Desktop Action new-empty-window]
-Exec=$BINDIR/cursor --enable-features=UseOzonePlatformc --ozone-platform-hint --new-window %F
+Exec=$BINDIR/cursor --enable-features=UseOzonePlatform --ozone-platform-hint=wayland --new-window %F
 EOF
 
 chmod +x $BINDIR/cursor-update.sh
