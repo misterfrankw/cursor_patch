@@ -6,7 +6,7 @@ TEMPDIR=/tmp/cursor
 mkdir -p $TEMPDIR
 pushd $TEMPDIR
 
-wget https://downloads.cursor.com/production/client/linux/x64/appimage/Cursor-0.47.8-82ef0f61c01d079d1b7e5ab04d88499d5af500e3.deb.glibc2.25-x86_64.AppImage -O $TEMPDIR/cursor.AppImage.original
+wget https://downloads.cursor.com/production/client/linux/x64/appimage/Cursor-0.47.7-33ec0dad159bc0ad620f6bbda539efe90c39748d.deb.glibc2.25-x86_64.AppImage -O $TEMPDIR/cursor.AppImage.original
 chmod +x $TEMPDIR/cursor.AppImage.original
 
 # Išskleisti AppImage
