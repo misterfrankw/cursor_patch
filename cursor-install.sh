@@ -15,7 +15,7 @@ chmod +x $TEMPDIR/cursor.AppImage.original
 $TEMPDIR/cursor.AppImage.original --appimage-extract
 cp $TEMPDIR/squashfs-root/cursor.png $HOME/.icons/
 
-wget https://raw.githubusercontent.com/mxsteini/cursor_patch/main/cursor-update.sh -O $BINDIR/cursor-update.sh
+wget https://raw.githubusercontent.com/misterfrankw/cursor_patch/refs/heads/main/cursor-update.sh -O $BINDIR/cursor-update.sh
 
 cat <<EOF > $HOME/.local/share/applications/cursor.desktop
 [Desktop Entry]
