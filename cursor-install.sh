@@ -2,13 +2,11 @@
 
 BINDIR=$HOME/bin
 TEMPDIR=/tmp/cursor
-APPIMAGE_URL="https://downloads.cursor.com/production/client/linux/x64/appimage/Cursor-0.47.8-82ef0f61c01d079d1b7e5ab04d88499d5af500e3.deb.glibc2.25-x86_64.AppImage"
-mkdir -p $TEMPDIR $BINDIR $HOME/.icons $HOME/.local/share/applications
 
+mkdir -p $TEMPDIR
 pushd $TEMPDIR
 
-# Atsisiųsti naujausią AppImage
-wget -O $TEMPDIR/cursor.AppImage.original $APPIMAGE_URL
+wget https://downloads.cursor.com/production/client/linux/x64/appimage/Cursor-0.47.8-82ef0f61c01d079d1b7e5ab04d88499d5af500e3.deb.glibc2.25-x86_64.AppImage -O $TEMPDIR/cursor.AppImage.original
 chmod +x $TEMPDIR/cursor.AppImage.original
 
 # Išskleisti AppImage
